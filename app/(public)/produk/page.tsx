@@ -1,0 +1,20 @@
+import { Hero } from "@/components/hero";
+import { CTA } from "@/components/cta";
+import { ProductGrid } from "./components/product-grid";
+
+export default function ProdukPage() {
+  return (
+    <main className="my-12">
+      <Hero
+        title="Produk Daur Ulang PDU Bumijo"
+        description="Berbagai produk hasil pengolahan dan pemanfaatan kembali sampah yang memiliki nilai guna dan nilai ekonomi."
+      />
+      <ProductGrid />
+      <CTA
+        title="Masih ingin mengetahui produk lainnya?"
+        description="Kami juga menerima pemesanan dalam jumlah tertentu
+dan siap memberikan informasi mengenai stok produk."
+      />
+    </main>
+  );
+}

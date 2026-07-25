@@ -1,0 +1,37 @@
+import Image from "next/image";
+
+export function SiapaKami() {
+  return (
+    <section className="px-6 py-16 md:py-24">
+      <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:gap-16">
+        <div className="relative w-full max-w-sm shrink-0 md:w-2/5">
+          <div className="absolute -inset-3 -z-10 rounded-[2rem] bg-light-primary/50" />
+          <Image
+            src="https://placehold.net/600x400.png"
+            alt="Tentang PDU Bumijo"
+            width={600}
+            height={450}
+            className="h-auto w-full rounded-3xl border-2 border-dark-primary object-cover"
+          />
+        </div>
+
+        <div className="flex flex-col gap-4">
+          <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Siapa Kami
+          </span>
+          <h2 className="text-2xl font-semibold text-dark-primary md:text-3xl">
+            Pusat Daur Ulang Sampah Mandiri &quot;Papa Dulang Mami&quot;
+          </h2>
+          <p className="text-dark-primary/85 leading-relaxed">
+            Pusat Daur Ulang Sampah Mandiri &quot;Papa Dulang Mami&quot;
+            Bumijo merupakan pusat pengelolaan sampah terpadu yang berlokasi
+            di Kelurahan Bumijo RT 35/RW 08. Bersama masyarakat, kami
+            mengelola sampah rumah tangga menjadi produk yang lebih
+            bermanfaat sehingga mengurangi beban lingkungan sekaligus
+            memberikan nilai ekonomi.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}

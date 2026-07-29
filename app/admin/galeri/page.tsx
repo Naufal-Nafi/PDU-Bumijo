@@ -18,7 +18,6 @@ export default async function AdminGaleriPage() {
           {galeriList.map((item) => (
             <div key={item.id} className="rounded border p-4">
               {item.src && (
-                // eslint-disable-next-line @next/next/no-img-element
                 <Image
                   src={item.src}
                   alt={item.alt ?? ""}

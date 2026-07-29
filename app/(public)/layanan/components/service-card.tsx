@@ -1,9 +1,10 @@
 import Image from "next/image";
 import type { Layanan } from "../layanan";
+import { FadeIn } from "@/components/animation/fade-in";
 
 export function ServiceCard({ layanan }: { layanan: Layanan }) {
   return (
-    <div className="group overflow-hidden rounded-2xl border border-light-primary/30 bg-white shadow-sm transition hover:shadow-md">
+    <FadeIn className="group overflow-hidden rounded-2xl border border-light-primary/30 bg-white shadow-sm transition hover:shadow-md">
       <div className="relative aspect-3/2 w-full overflow-hidden bg-secondary/30">
         <Image
           src={layanan.image}
@@ -20,6 +21,6 @@ export function ServiceCard({ layanan }: { layanan: Layanan }) {
           {layanan.description}
         </p>
       </div>
-    </div>
+    </FadeIn>
   );
 }

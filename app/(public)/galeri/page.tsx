@@ -1,7 +1,11 @@
+import { Hero } from "@/components/hero";
+import { GalleryGrid } from "./components/gallery-grid";
+
 export default function GaleriPage() {
     return (
-        <div className="flex flex-col flex-1 items-center min-h-screen justify-center font-sans text-dark-primary">
-            
-        </div>
+        <main className="my-12">
+            <Hero title="Galeri" description="Momen-momen dari kegiatan pengelolaan sampah dan pemberdayaan masyarakat bersama PDU Bumijo."/>
+            <GalleryGrid />
+        </main>
     );
 }

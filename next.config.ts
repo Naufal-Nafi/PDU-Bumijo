@@ -7,7 +7,17 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "placehold.net",
       },
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      }
     ],
+  },
+
+  experimental: {
+    serverActions: {
+      bodySizeLimit: "5mb",
+    },
   },
 };
 

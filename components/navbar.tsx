@@ -2,20 +2,17 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { NAV_ITEMS } from "@/lib/constants";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 
-const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  { label: "Tentang Kami", href: "/tentang-kami" },
-  { label: "Layanan", href: "/layanan" },
-  { label: "Produk", href: "/produk" },
-  { label: "Galeri", href: "/galeri" },
-];
+interface NavbarProps {
+  app_url: string;
+}
 
-export default function Navbar() {
+export default function Navbar({ app_url }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
@@ -65,12 +62,12 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
-        <Button     
-        size="lg"
-        className="hidden md:inline-block"
+        <Link
+          href={app_url}
+          target="_blank"
         >
-          App Siap Berkah
-        </Button>
+          <Button >App Siap Berkah</Button>
+        </Link>
 
         {/* Hamburger button (mobile only) */}
         <button

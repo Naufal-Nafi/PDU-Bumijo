@@ -1,3 +1,5 @@
+import { FadeIn } from "@/components/animation/fade-in";
+
 const MISI = [
   "Mengurangi sampah melalui pemilahan dan daur ulang, terutama daur ulang plastik.",
   "Mengolah sampah organik menjadi kompos dan pakan maggot.",
@@ -10,7 +12,7 @@ export function VisiMisi() {
   return (
     <section className="bg-secondary/30 px-6 py-16 md:py-24">
       <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-5">
-        <div className="flex flex-col justify-center gap-4 rounded-3xl bg-dark-primary p-8 text-background md:col-span-2">
+        <FadeIn className="flex flex-col justify-center gap-4 rounded-3xl bg-dark-primary p-8 text-background md:col-span-2">
           <span className="text-sm font-semibold uppercase tracking-wide text-light-primary">
             Visi
           </span>
@@ -20,9 +22,9 @@ export function VisiMisi() {
             ramah lingkungan, produktif, dan menjadi pusat edukasi ekonomi
             sirkular berbasis masyarakat.&rdquo;
           </p>
-        </div>
+        </FadeIn>
 
-        <div className="rounded-3xl bg-background p-8 md:col-span-3">
+        <FadeIn delay={0.1} className="rounded-3xl bg-background p-8 md:col-span-3">
           <span className="text-sm font-semibold uppercase tracking-wide text-primary">
             Misi
           </span>
@@ -36,7 +38,7 @@ export function VisiMisi() {
               </li>
             ))}
           </ol>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

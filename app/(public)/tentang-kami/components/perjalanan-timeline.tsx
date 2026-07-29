@@ -1,3 +1,6 @@
+import { FadeIn } from "@/components/animation/fade-in";
+import { PopIn } from "@/components/animation/pop-in";
+
 const PERJALANAN = [
   { title: "Eco Center 35", desc: "Titik awal kesadaran pengelolaan sampah di lingkungan RT 35." },
   { title: "Kampung Daur Ulang", desc: "Warga mulai memilah dan mendaur ulang sampah secara mandiri." },
@@ -30,18 +33,18 @@ export function PerjalananTimeline() {
                   i % 2 === 1 ? "md:flex-row-reverse" : ""
                 }`}
               >
-                <span className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-background ring-4 ring-background md:absolute md:left-1/2 md:-translate-x-1/2">
+                <PopIn className="relative z-10 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-background ring-4 ring-background md:absolute md:left-1/2 md:-translate-x-1/2">
                   {i + 1}
-                </span>
+                </PopIn>
 
-                <div
+                <FadeIn
                   className={`w-full rounded-2xl border border-dark-primary/10 bg-secondary/25 p-5 md:w-[calc(50%-2.5rem)] ${
                     i % 2 === 1 ? "md:mr-auto md:text-right" : "md:ml-auto"
                   }`}
                 >
                   <h3 className="font-semibold text-dark-primary">{item.title}</h3>
                   <p className="mt-1 text-sm text-dark-primary/75">{item.desc}</p>
-                </div>
+                </FadeIn>
               </li>
             ))}
           </ol>

@@ -12,7 +12,7 @@ export function SectionHeader({
   className,
 }: SectionHeaderProps) {
   return (
-    <div className={cn("space-y-3 text-center", className)}>
+    <div className={cn("space-y-6 text-center", className)}>
       <h2 className="font-fraunces text-3xl md:text-5xl text-dark-primary">
         {title}
       </h2>

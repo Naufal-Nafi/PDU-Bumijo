@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { Produk } from "@/db/schema";
+import { FadeIn } from "@/components/animation/fade-in";
 
 function formatRupiah(price: number) {
   return new Intl.NumberFormat("id-ID", {
@@ -11,7 +12,7 @@ function formatRupiah(price: number) {
 
 export function ProductCard({ produk }: { produk: Produk }) {
   return (
-    <div className="group overflow-hidden rounded-2xl border border-light-primary/30 bg-white shadow-sm transition hover:shadow-md">
+    <FadeIn className="group overflow-hidden rounded-2xl border border-light-primary/30 bg-white shadow-sm transition hover:shadow-md">
       <div className="relative aspect-3/2 w-full overflow-hidden bg-secondary/30">
         <Image
           src={produk.image ?? "https://placehold.net/600x400.png"}
@@ -31,6 +32,6 @@ export function ProductCard({ produk }: { produk: Produk }) {
           {produk.description}
         </p>
       </div>
-    </div>
+    </FadeIn>
   );
 }

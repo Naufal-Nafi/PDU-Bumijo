@@ -2,8 +2,8 @@ import { FadeIn } from "@/components/animation/fade-in";
 import { PopIn } from "@/components/animation/pop-in";
 
 const PERJALANAN = [
-  { title: "Eco Center 35", desc: "Titik awal kesadaran pengelolaan sampah di lingkungan RT 35." },
-  { title: "Kampung Daur Ulang", desc: "Warga mulai memilah dan mendaur ulang sampah secara mandiri." },
+  { title: "Bank Sampah Berseri 35", desc: "Titik awal kesadaran pengelolaan sampah di lingkungan RT 35." },
+  { title: "Kampung Daur Ulang 35", desc: "Warga mulai memilah dan mendaur ulang sampah secara mandiri." },
   { title: "Kolaborasi Bank Sampah", desc: "Bersinergi dengan bank sampah sekitar untuk memperluas dampak." },
   { title: "PDU Papa Dulang Mami", desc: "Terbentuknya pusat daur ulang terpadu yang kita kenal sekarang." },
   { title: "Program Edukasi & Studi Tiru", desc: "Menjadi rujukan edukasi dan studi banding pengelolaan sampah." },

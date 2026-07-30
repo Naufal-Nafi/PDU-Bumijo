@@ -9,7 +9,7 @@ export function Hero() {
             Kelurahan Bumijo &middot; RT 35 / RW 08
         </Badge>
         <h1
-          className="font-fraunces text-4xl font-semibold leading-tight text-dark-primary md:text-6xl"
+          className="font-fraunces text-4xl font-semibold leading-tight text-dark-primary md:text-5xl"
         >
           Dari Sampah Rumah Tangga,
           <br className="hidden md:block" /> Menjadi Berkah Bersama

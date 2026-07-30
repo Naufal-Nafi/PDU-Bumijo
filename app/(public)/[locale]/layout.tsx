@@ -2,22 +2,40 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { MotionConfig } from "motion/react";
 import { kontakService } from "@/services/kontak.service";
+import { notFound } from "next/navigation";
+import { isValidLocale, locales } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionary";
 
-export default async function PublicLayout({
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string}>;
 }>) {
-  const kontak = await kontakService.getKontak();
+  const { locale } = await params;
+  if (!isValidLocale(locale)) {
+    notFound();
+  }
+
+  const [kontak, dict] = await Promise.all([
+    kontakService.getKontak(),
+    getDictionary(locale),
+  ]);
+
   return (
     <div>
       <div className="flex flex-col items-center justify-center w-full">
-        <Navbar app_url={kontak.appUrl ?? "" }/>
+        <Navbar app_url={kontak.appUrl ?? "" } dict={dict.nav} locale={locale}/>
       </div>
       <main>
         <MotionConfig reducedMotion="user">{children}</MotionConfig>
       </main>
-      <Footer />
+      <Footer dict={dict.nav} locale={locale}/>
       {/* <div
         className="
           pointer-events-none

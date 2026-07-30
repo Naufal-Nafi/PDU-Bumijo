@@ -8,8 +8,8 @@ const ALASAN = [
   },
   {
     icon: "🏡",
-    title: "Sampah Rumah Tangga Menumpuk",
-    desc: "Sebagian besar sampah berasal dari aktivitas rumah tangga sehari-hari warga.",
+    title: "Inovasi Bank Sampah Berseri 35",
+    desc: "Wujud dari kreativitas dan inovasi terpadu dari bank sampah Berseri 35 untuk menyelesaikan masalah sampah di wilayah kelurahan Bumijo",
   },
   {
     icon: "🌱",
@@ -18,7 +18,7 @@ const ALASAN = [
   },
   {
     icon: "🤝",
-    title: "Melibatkan Masyarakat",
+    title: "Pemberdayaan Masyarakat",
     desc: "Perubahan nyata hanya bisa terjadi lewat partisipasi aktif warga sekitar.",
   },
 ];

@@ -26,7 +26,7 @@ export async function CTA({ title, description }: CTAProps) {
               Hubungi via WhatsApp
             </a>
           </Button>
-          <Button size="lg" variant="white">
+          <Button size="lg" variant="outline" className="text-dark-primary">
             <Link href="/kontak">Kunjungi Halaman Kontak</Link>
           </Button>
         </FadeIn>

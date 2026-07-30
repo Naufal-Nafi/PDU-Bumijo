@@ -17,7 +17,7 @@ export async function FeaturedServices() {
   const featured = layanan.slice(0, 3);
 
   return (
-    <section className="bg-light-primary py-24">
+    <section className="bg-light-primary py-24 rounded-2xl">
       <div className="mx-auto flex w-4/5 max-w-7xl flex-col gap-14">
 
         <FadeIn>
@@ -37,7 +37,7 @@ export async function FeaturedServices() {
 
         <FadeIn>
           <div className="flex justify-center">
-            <Button size="lg" render={
+            <Button size="lg" variant="outline" render={
                 <Link href="/layanan">
                 Lihat Semua Layanan
                 <ArrowRight />

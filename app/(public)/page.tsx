@@ -56,7 +56,7 @@ export default function Home() {
 
           <div className="grid items-center gap-10 md:grid-cols-2 md:gap-16">
             <FadeIn>
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border-2 border-dark-primary bg-secondary">
+              <div className="relative aspect-4/3 overflow-hidden rounded-3xl border-2 border-dark-primary bg-secondary">
                 <Image
                   src="https://placehold.net/800x600.png"
                   alt="Tentang PDU Bumijo"
@@ -84,7 +84,7 @@ export default function Home() {
                 <Link
                   href="/tentang-kami"
                   className={cn(
-                    buttonVariants({ variant: "outline" }),
+                    buttonVariants({ size: "lg" }),
                     "border-dark-primary",
                   )}
                 >

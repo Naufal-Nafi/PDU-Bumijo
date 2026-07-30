@@ -8,10 +8,15 @@ import {
   DialogContent,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { galleryImages, type GalleryImage } from "../data";
+// import { galleryImages, type GalleryImage } from "../data";
+import type { Galeri } from "@/db/schema";
 
-export function GalleryGrid() {
-  const [selected, setSelected] = useState<GalleryImage | null>(null);
+interface GalleryGridProps {
+  galleryImages: Galeri[];
+}
+
+export function GalleryGrid({ galleryImages }: GalleryGridProps) {
+  const [selected, setSelected] = useState<Galeri | null>(null);
 
   return (
     <>
@@ -36,11 +41,11 @@ export function GalleryGrid() {
                 hover:blur-none
             "
           >
-            <Image
+            <img
               src={image.src}
-              alt={image.alt}
-              width={image.width}
-              height={image.height}
+              alt={image.alt ?? "Galeri PDU Bumijo"}
+              // width={image.width}
+              // height={image.height}
               className="h-auto w-full object-cover transition-transform duration-500 group-hover/item:scale-101"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
             />
@@ -64,11 +69,11 @@ export function GalleryGrid() {
           </DialogTitle>
           {selected && (
             <div className="relative overflow-hidden rounded-2xl bg-dark-primary/5">
-              <Image
+              <img
                 src={selected.src}
-                alt={selected.alt}
-                width={selected.width}
-                height={selected.height}
+                alt={selected.alt ?? "Galeri PDU Bumijo"}
+                // width={selected.width}
+                // height={selected.height}
                 className="h-auto max-h-[85vh] w-full object-contain"
               />
               <button

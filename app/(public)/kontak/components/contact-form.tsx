@@ -7,7 +7,6 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
 
-// const WHATSAPP_NUMBER = "6281234567890"; // samakan dengan contact-info.tsx
 
 interface ContactFromProps {
   WHATSAPP_NUMBER: string;

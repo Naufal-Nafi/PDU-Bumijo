@@ -36,6 +36,7 @@ export async function createGaleriAction(
   }
 
   try {
+    console.log("DATA IMAGE:",imageFile)
     const data = await galeriService.create(parsed.data, imageFile);
     revalidatePath("/admin/galeri");
     return { success: true, data, message: "Galeri berhasil ditambahkan" };

@@ -3,7 +3,6 @@ import { GaleriDeleteDialog } from "./components/galeri-delete-dialog";
 import { GaleriFormDialog } from "./components/galeri-form-dialog";
 import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
-import Image from "next/image";
 
 export default async function AdminGaleriPage() {
   const galeriList = await galeriService.getAll();
@@ -18,7 +17,7 @@ export default async function AdminGaleriPage() {
           {galeriList.map((item) => (
             <div key={item.id} className="rounded border p-4">
               {item.src && (
-                <Image
+                <img
                   src={item.src}
                   alt={item.alt ?? ""}
                   className="mb-2 h-32 w-full rounded object-cover"

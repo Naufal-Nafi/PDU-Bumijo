@@ -79,12 +79,12 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter>
+      <SidebarFooter className="mb-40">
         <form action={logoutAction}>
           <Button
             type="submit"
             variant="ghost"
-            className="w-full justify-start gap-2"
+            className="w-full justify-start gap-2 hover:bg-red-400"
           >
             <LogOut className="size-4" />
             <span>Keluar</span>

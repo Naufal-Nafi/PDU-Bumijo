@@ -5,6 +5,7 @@ import type { CreateProdukInput, UpdateProdukInput } from "@/validations/produk.
 export const produkService = {
   getAll: () => produkRepository.findAll(),
   getById: (id: number) => produkRepository.findById(id),
+  getFeatured: (limit: number) => produkRepository.findSome(limit),
 
   create: async (data: CreateProdukInput, imageFile?: File | null) => {
     let imageUrl: string | undefined;

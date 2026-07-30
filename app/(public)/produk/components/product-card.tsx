@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Produk } from "../product";
+import type { Produk } from "@/db/schema";
 
 function formatRupiah(price: number) {
   return new Intl.NumberFormat("id-ID", {
@@ -14,7 +14,7 @@ export function ProductCard({ produk }: { produk: Produk }) {
     <div className="group overflow-hidden rounded-2xl border border-light-primary/30 bg-white shadow-sm transition hover:shadow-md">
       <div className="relative aspect-3/2 w-full overflow-hidden bg-secondary/30">
         <Image
-          src={produk.image}
+          src={produk.image ?? "https://placehold.net/600x400.png"}
           alt={produk.name}
           fill
           className="object-cover transition duration-300 group-hover:scale-105"

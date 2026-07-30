@@ -13,7 +13,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import {
   createGaleriAction,
   updateGaleriAction,
@@ -78,7 +77,7 @@ export function GaleriFormDialog({ mode, galeri, trigger }: Props) {
 
         <form ref={formRef} action={handleSubmit} className="space-y-4">
           {mode === "edit" && galeri && (
-            <input type="hidden" name="id" value={galeri.id} />
+            <input type="hidden" alt="id" value={galeri.id} />
           )}
 
           <div className="space-y-2">
@@ -86,6 +85,7 @@ export function GaleriFormDialog({ mode, galeri, trigger }: Props) {
             <Input
               id="image"
               name="image"
+              alt="image"
               type="file"
               accept="image/*"
               onChange={handleImageChange}
@@ -97,6 +97,14 @@ export function GaleriFormDialog({ mode, galeri, trigger }: Props) {
                 alt="Preview"
                 className="mt-2 h-32 w-32 rounded object-cover"
               />
+            )}
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="alt">Deskripsi gambar</Label>
+            <Input id="alt" name="alt" defaultValue={galeri?.alt ?? ""} />
+            {errors?.alt && (
+              <p className="text-sm text-destructive">{errors.alt[0]}</p>
             )}
           </div>
 

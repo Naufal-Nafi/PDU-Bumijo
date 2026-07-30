@@ -63,6 +63,7 @@ export default function Navbar({ app_url }: NavbarProps) {
 
         {/* Desktop CTA */}
         <Link
+          className="hidden md:block"
           href={app_url}
           target="_blank"
         >

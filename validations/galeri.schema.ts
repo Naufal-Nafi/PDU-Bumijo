@@ -1,7 +1,7 @@
 import { z } from "zod";
 
 export const createGaleriSchema = z.object({
-  src: z.string().min(1, "Src wajib diisi"),
+  src: z.string().optional(),
   alt: z.string().max(255).optional(),
 });
 

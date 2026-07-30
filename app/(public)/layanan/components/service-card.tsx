@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { Layanan } from "../layanan";
+import type { Layanan } from "@/db/schema";
 import { FadeIn } from "@/components/animation/fade-in";
 
 export function ServiceCard({ layanan }: { layanan: Layanan }) {
@@ -7,7 +7,7 @@ export function ServiceCard({ layanan }: { layanan: Layanan }) {
     <FadeIn className="group overflow-hidden rounded-2xl border border-light-primary/30 bg-white shadow-sm transition hover:shadow-md">
       <div className="relative aspect-3/2 w-full overflow-hidden bg-secondary/30">
         <Image
-          src={layanan.image}
+          src={layanan.image ?? "https://placehold.net/600x400.png"}
           alt={layanan.title}
           fill
           className="object-cover transition duration-300 group-hover:scale-105"

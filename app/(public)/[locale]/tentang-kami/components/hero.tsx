@@ -1,7 +1,11 @@
 import { Badge } from "@/components/ui/badge";
+import { Dictionary } from "@/lib/dictionary";
 
+interface HeroProps {
+  dict: Dictionary["aboutUs"];
+}
 
-export function Hero() {
+export function Hero({ dict }: HeroProps) {
   return (
     <section className="px-6 pb-20 pt-28 md:pb-28 md:pt-36">
       <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
@@ -11,12 +15,11 @@ export function Hero() {
         <h1
           className="font-fraunces text-4xl font-semibold leading-tight text-dark-primary md:text-5xl"
         >
-          Dari Sampah Rumah Tangga,
-          <br className="hidden md:block" /> Menjadi Berkah Bersama
+          {dict.hero.title}
+          {/* <br className="hidden md:block" /> Menjadi Berkah Bersama */}
         </h1>
         <p className="max-w-xl text-base text-dark-primary/80 md:text-lg font-sans">
-          Membangun pengelolaan sampah berbasis masyarakat untuk lingkungan
-          yang lebih bersih dan ekonomi yang lebih berkelanjutan.
+          {dict.hero.Subtitles}
         </p>
       </div>
     </section>

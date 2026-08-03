@@ -5,6 +5,7 @@ import { relations } from "drizzle-orm";
 export const kategori = pgTable("kategori", {
   id: serial("id").primaryKey(),
   title: varchar("title", { length: 255 }).notNull(),
+  title_eng: varchar("title_eng", { length: 255}),
 });
 
 // ================= layanan =================

@@ -33,7 +33,7 @@ export async function loginAction(
     return result;
   }
 
-  redirect("/admin");
+  redirect("/admin/layanan");
 }
 
 export async function logoutAction() {

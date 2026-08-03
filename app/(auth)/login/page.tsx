@@ -42,7 +42,6 @@ export default function LoginPage() {
                 id="email"
                 name="email"
                 type="email"
-                placeholder="admin@pdubumijo.id"
                 autoComplete="email"
               />
               {!state.success && state.errors?.email && (

@@ -10,8 +10,13 @@ import { cn } from "@/lib/utils";
 
 import { GalleryCarousel } from "./gallery-carousel";
 import { SectionHeader } from "./section-header";
+import { Dictionary } from "@/lib/dictionary";
 
-export async function FeaturedGallery() {
+interface FeaturedGalleryProps {
+  dict: Dictionary["homepage"];
+}
+
+export async function FeaturedGallery({ dict }: FeaturedGalleryProps) {
   const galleryList = await galeriService.getAll();
   const featuredGallery = galleryList.slice(0, 6);
 
@@ -24,8 +29,8 @@ export async function FeaturedGallery() {
       <div className="mx-auto flex w-4/5 max-w-7xl flex-col gap-12 md:gap-16">
         <FadeIn>
           <SectionHeader
-            title="Cerita dalam Setiap Langkah"
-            subtitle="Lihat berbagai kegiatan pengelolaan sampah, edukasi lingkungan, dan kebersamaan masyarakat di Pusat Daur Ulang Bumijo."
+            title={dict.gallery.title}
+            subtitle={dict.gallery.subTitle}
           />
         </FadeIn>
 
@@ -42,7 +47,7 @@ export async function FeaturedGallery() {
                 "group gap-2",
               )}
             >
-              Lihat Galeri Selengkapnya
+              {dict.gallery.button}
 
               <ArrowRight className="transition-transform group-hover:translate-x-1" />
             </Link>

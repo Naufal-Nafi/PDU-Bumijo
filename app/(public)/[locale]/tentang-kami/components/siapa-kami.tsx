@@ -1,7 +1,12 @@
 import Image from "next/image";
 import { FadeIn } from "@/components/animation/fade-in";
+import { Dictionary } from "@/lib/dictionary";
 
-export function SiapaKami() {
+interface SiapaKamiProps {
+  dict: Dictionary["aboutUs"];
+}
+
+export function SiapaKami({ dict }: SiapaKamiProps) {
   return (
     <section className="px-6 py-16 md:py-24">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:gap-16">
@@ -18,18 +23,13 @@ export function SiapaKami() {
 
         <FadeIn className="flex flex-col gap-4">
           <span className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Siapa Kami
+            {dict.siapaKami.header}
           </span>
           <h2 className="text-2xl font-semibold text-dark-primary md:text-3xl">
-            Pusat Daur Ulang Sampah Mandiri &quot;Papa Dulang Mami&quot;
+            {dict.siapaKami.title}
           </h2>
           <p className="text-dark-primary/85 leading-relaxed">
-            Pusat Daur Ulang Sampah Mandiri &quot;Papa Dulang Mami&quot;
-            Bumijo merupakan pusat pengelolaan sampah terpadu yang berlokasi
-            di Kelurahan Bumijo RT 35/RW 08. Bersama masyarakat, kami
-            mengelola sampah rumah tangga menjadi produk yang lebih
-            bermanfaat sehingga mengurangi beban lingkungan sekaligus
-            memberikan nilai ekonomi.
+            {dict.siapaKami.subTitle}
           </p>
         </FadeIn>
       </div>

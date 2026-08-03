@@ -10,8 +10,15 @@ import { Button } from "@/components/ui/button";
 
 import { ServiceCard } from "../layanan/components/service-card";
 import { SectionHeader } from "./section-header";
+import { Dictionary } from "@/lib/dictionary";
+import { Locale } from "@/lib/i18n";
 
-export async function FeaturedServices() {
+interface FeaturedServiceProps {
+  dict: Dictionary["homepage"];
+  locale: Locale;
+}
+
+export async function FeaturedServices({ dict, locale }: FeaturedServiceProps) {
   const layanan = await layananService.getAll();
 
   const featured = layanan.slice(0, 3);
@@ -22,24 +29,24 @@ export async function FeaturedServices() {
 
         <FadeIn>
           <SectionHeader
-            title="Layanan Kami"
-            subtitle="Kami menyediakan berbagai layanan edukasi, pengelolaan, hingga pendampingan pengolahan sampah bagi masyarakat, sekolah, maupun instansi."
+            title={dict.featuredServices.title}
+            subtitle={dict.featuredServices.subTitle}
           />
         </FadeIn>
 
         <div className="grid gap-8 lg:grid-cols-3">
           {featured.map((item, index) => (
             <PopIn key={item.id} delay={index * 0.08}>
-              <ServiceCard layanan={item} />
+              <ServiceCard locale={locale as Locale} layanan={item} />
             </PopIn>
           ))}
         </div>
 
         <FadeIn>
           <div className="flex justify-center">
-            <Button size="lg" variant="outline" render={
+            <Button size="lg" variant="outline" nativeButton={false} render={
                 <Link href="/layanan">
-                Lihat Semua Layanan
+                {dict.featuredServices.button}
                 <ArrowRight />
               </Link>
             } />

@@ -6,11 +6,18 @@ import { createKategoriSchema, updateKategoriSchema } from "@/validations/katego
 import type { ActionResponse } from "@/lib/types";
 import type { Kategori } from "@/db/schema";
 
+function parseFormFields(formData: FormData) {
+  return {
+    title: formData.get("title"),
+    title_eng: formData.get("title_eng") || undefined,
+  };
+}
+
 export async function createKategoriAction(
   _prevState: unknown,
   formData: FormData
 ): Promise<ActionResponse<Kategori | null>> {
-  const parsed = createKategoriSchema.safeParse({ title: formData.get("title") });
+  const parsed = createKategoriSchema.safeParse(parseFormFields(formData));
 
   if (!parsed.success) {
     return { success: false, message: "Data tidak valid", errors: parsed.error.flatten().fieldErrors };
@@ -32,7 +39,7 @@ export async function updateKategoriAction(
 ): Promise<ActionResponse<Kategori | null>> {
   const parsed = updateKategoriSchema.safeParse({
     id: formData.get("id"),
-    title: formData.get("title"),
+    ...parseFormFields(formData),
   });
 
   if (!parsed.success) {

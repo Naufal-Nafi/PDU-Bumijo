@@ -27,7 +27,7 @@ import { Button } from "@/components/ui/button";
 import { logoutAction } from "@/actions/auth.action";
 
 const navItems = [
-  { title: "Dashboard", url: "/admin", icon: LayoutDashboard },
+  // { title: "Dashboard", url: "/admin", icon: LayoutDashboard },
   { title: "Layanan", url: "/admin/layanan", icon: Wrench },
   { title: "Produk", url: "/admin/produk", icon: Package },
   { title: "Galeri", url: "/admin/galeri", icon: Images },

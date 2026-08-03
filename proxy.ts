@@ -1,19 +1,12 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { decrypt, SESSION_COOKIE_NAME } from "@/lib/session";
-import { defaultLocale, locales, isValidLocale } from "@/lib/i18n";
+import { defaultLocale, locales } from "@/lib/i18n";
 
 const ADMIN_PREFIX = "/admin";
 const LOGIN_PATH = "/login";
 
-function getPreferredLocale(request: NextRequest): string {
-  const acceptLanguage = request.headers.get("accept-language");
-  if (acceptLanguage) {
-    const preferred = acceptLanguage.split(",")[0].split("-")[0];
-    if (isValidLocale(preferred)) {
-      return preferred;
-    }
-  }
+function getPreferredLocale(): string {
   return defaultLocale;
 }
 
@@ -48,7 +41,7 @@ export async function proxy(request: NextRequest) {
   );
 
   if (!pathnameHasLocale) {
-    const locale = getPreferredLocale(request);
+    const locale = getPreferredLocale();
     return NextResponse.redirect(
       new URL(`/${locale}${pathname}`, request.url)
     );

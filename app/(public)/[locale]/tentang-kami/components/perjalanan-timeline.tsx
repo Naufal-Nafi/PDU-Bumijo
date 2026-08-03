@@ -1,24 +1,29 @@
 import { FadeIn } from "@/components/animation/fade-in";
 import { PopIn } from "@/components/animation/pop-in";
 
-const PERJALANAN = [
-  { title: "Bank Sampah Berseri 35", desc: "Titik awal kesadaran pengelolaan sampah di lingkungan RT 35." },
-  { title: "Kampung Daur Ulang 35", desc: "Warga mulai memilah dan mendaur ulang sampah secara mandiri." },
-  { title: "Kolaborasi Bank Sampah", desc: "Bersinergi dengan bank sampah sekitar untuk memperluas dampak." },
-  { title: "PDU Papa Dulang Mami", desc: "Terbentuknya pusat daur ulang terpadu yang kita kenal sekarang." },
-  { title: "Program Edukasi & Studi Tiru", desc: "Menjadi rujukan edukasi dan studi banding pengelolaan sampah." },
-];
+import { Dictionary } from "@/lib/dictionary";
 
-export function PerjalananTimeline() {
+interface PerjalananTimelineProps {
+  dict: Dictionary["aboutUs"];
+}
+
+export function PerjalananTimeline({ dict }: PerjalananTimelineProps) {
+  const PERJALANAN = [
+    { title: dict.timeline.perjalanan[1].title, desc: dict.timeline.perjalanan[1].desc },
+    { title: dict.timeline.perjalanan[2].title, desc: dict.timeline.perjalanan[2].desc },
+    { title: dict.timeline.perjalanan[3].title, desc: dict.timeline.perjalanan[3].desc },
+    { title: dict.timeline.perjalanan[4].title, desc: dict.timeline.perjalanan[4].desc },
+    { title: dict.timeline.perjalanan[5].title, desc: dict.timeline.perjalanan[5].desc },
+  ];
   return (
     <section className="bg-background px-6 py-16 md:py-24">
       <div className="mx-auto max-w-4xl">
         <div className="mx-auto mb-14 max-w-xl text-center">
           <span className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Perjalanan Kami
+            {dict.timeline.header}
           </span>
           <h2 className="mt-2 text-2xl font-semibold text-dark-primary md:text-3xl">
-            Dari Titik Awal Hingga Hari Ini
+            {dict.timeline.title}
           </h2>
         </div>
 

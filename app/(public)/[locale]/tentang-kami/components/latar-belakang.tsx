@@ -1,39 +1,43 @@
 import { FadeIn } from "@/components/animation/fade-in";
+import { Dictionary } from "@/lib/dictionary";
 
-const ALASAN = [
-  {
-    icon: "♻️",
-    title: "Volume Sampah Meningkat",
-    desc: "Jumlah timbunan sampah di lingkungan padat penduduk terus bertambah setiap tahun.",
-  },
-  {
-    icon: "🏡",
-    title: "Inovasi Bank Sampah Berseri 35",
-    desc: "Wujud dari kreativitas dan inovasi terpadu dari bank sampah Berseri 35 untuk menyelesaikan masalah sampah di wilayah kelurahan Bumijo",
-  },
-  {
-    icon: "🌱",
-    title: "Butuh Solusi Berkelanjutan",
-    desc: "Penanganan sampah konvensional belum cukup menjawab masalah jangka panjang.",
-  },
-  {
-    icon: "🤝",
-    title: "Pemberdayaan Masyarakat",
-    desc: "Perubahan nyata hanya bisa terjadi lewat partisipasi aktif warga sekitar.",
-  },
-];
+interface LatarBelakangProps {
+  dict: Dictionary["aboutUs"];
+}
 
-export function LatarBelakang() {
+export function LatarBelakang({ dict }: LatarBelakangProps) {
+  const ALASAN = [
+    {
+      icon: "♻️",
+      title: dict.latarBelakang.alasan[1].title,
+      desc: dict.latarBelakang.alasan[1].desc,
+    },
+    {
+      icon: "🏡",
+      title: dict.latarBelakang.alasan[2].title,
+      desc: dict.latarBelakang.alasan[2].desc,
+    },
+    {
+      icon: "🌱",
+      title: dict.latarBelakang.alasan[3].title,
+      desc: dict.latarBelakang.alasan[3].desc,
+    },
+    {
+      icon: "🤝",
+      title: dict.latarBelakang.alasan[4].title,
+      desc: dict.latarBelakang.alasan[4].desc,
+    },
+  ];
   return (
     <section className="bg-secondary/30 px-6 py-16 md:py-24">
       <div className="mx-auto max-w-5xl">
         <FadeIn>
           <div className="mx-auto mb-12 max-w-xl text-center">
             <span className="text-sm font-semibold uppercase tracking-wide text-primary">
-              Latar Belakang
+              {dict.latarBelakang.header}
             </span>
             <h2 className="mt-2 text-2xl font-semibold text-dark-primary md:text-3xl">
-              Mengapa Kami Berdiri?
+              {dict.latarBelakang.title}
             </h2>
           </div>
         </FadeIn>

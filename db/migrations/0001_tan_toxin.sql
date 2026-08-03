@@ -1,0 +1,1 @@
+ALTER TABLE "kategori" ADD COLUMN "title_eng" varchar(255);

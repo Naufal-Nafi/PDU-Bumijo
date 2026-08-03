@@ -10,8 +10,15 @@ import { Button } from "@/components/ui/button";
 
 import { ProductCard } from "../produk/components/product-card";
 import { SectionHeader } from "./section-header";
+import { Dictionary } from "@/lib/dictionary";
+import { Locale } from "@/lib/i18n";
 
-export async function FeaturedProducts() {
+interface FeaturedProductsProps {
+  dict: Dictionary["homepage"];
+  locale: Locale;
+}
+
+export async function FeaturedProducts({ dict, locale }: FeaturedProductsProps) {
   const produk = await produkService.getFeatured(3);
 
   return (
@@ -20,28 +27,33 @@ export async function FeaturedProducts() {
 
         <FadeIn>
           <SectionHeader
-            title="Produk Kami"
-            subtitle="Berbagai hasil olahan sampah yang memiliki nilai guna dan nilai ekonomi sebagai wujud ekonomi sirkular di Kelurahan Bumijo."
+            title={dict.featuredProducts.title}
+            subtitle={dict.featuredProducts.subTitle}
           />
         </FadeIn>
 
         <div className="grid gap-8 lg:grid-cols-3">
           {produk.map((item, index) => (
             <PopIn key={item.id} delay={index * 0.08}>
-              <ProductCard produk={item} />
+              <ProductCard locale={locale as Locale} produk={item} />
             </PopIn>
           ))}
         </div>
 
         <FadeIn>
           <div className="flex justify-center">
-            <Button size="lg" render={
+            <Button size="lg" nativeButton={false} render={
+              <Link href="/produk">
+                {dict.featuredProducts.button}
+                <ArrowRight />
+              </Link>
+            } />
+            {/* <Button size="lg">
               <Link href="/produk">
                 Lihat Semua Produk
                 <ArrowRight />
               </Link>
-            } />
-            {/* </Button> */}
+            </Button> */}
           </div>
         </FadeIn>
 

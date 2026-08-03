@@ -6,13 +6,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Send } from "lucide-react";
+import { Dictionary } from "@/lib/dictionary";
 
 
 interface ContactFromProps {
   WHATSAPP_NUMBER: string;
+  dict: Dictionary["contact"];
 }
 
-export function ContactForm({ WHATSAPP_NUMBER }: ContactFromProps) {
+export function ContactForm({ WHATSAPP_NUMBER, dict }: ContactFromProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -40,37 +42,37 @@ Terima kasih.`;
       className="flex flex-col gap-5 rounded-2xl border-2 border-secondary bg-background p-6 sm:p-8 shadow-[0rem_0.5rem_var(--secondary)]"
     >
       <div className="flex flex-col gap-2">
-        <Label htmlFor="name">Nama</Label>
+        <Label htmlFor="name">{dict.form.fieldName.label}</Label>
         <Input
           id="name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          placeholder="Nama lengkap"
+          placeholder={dict.form.fieldName.placeholder}
           required
           className="py-4 bg-white/40 "
         />
       </div>
 
       <div className="flex flex-col gap-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">{dict.form.fieldEmail.label}</Label>
         <Input
           id="email"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="nama@email.com"
+          placeholder={dict.form.fieldEmail.placeholder}
           required
           className="py-4 bg-white/40 "
         />
       </div>
 
       <div className="flex flex-col gap-2">
-        <Label htmlFor="message">Pesan</Label>
+        <Label htmlFor="message">{dict.form.fieldMessage.label}</Label>
         <Textarea
           id="message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Tuliskan kebutuhan Anda..."
+          placeholder={dict.form.fieldMessage.placeholder}
           rows={5}
           required
           className="bg-white/40 min-h-24"
@@ -81,12 +83,11 @@ Terima kasih.`;
         type="submit"
       >
         <Send className="size-4" />
-        Kirim via WhatsApp
+        {dict.form.button}
       </Button>
 
       <p className="text-center text-xs text-dark-primary/60">
-        Pesan akan dibuka melalui WhatsApp sehingga Anda dapat meninjau sebelum
-        mengirimkannya.
+        {dict.form.tips}
       </p>
     </form>
   );

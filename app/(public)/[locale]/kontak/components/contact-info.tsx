@@ -1,9 +1,11 @@
 import { MapPin, MessageCircle, Mail } from "lucide-react";
 import { ALAMAT } from "@/lib/constants";
+import { Dictionary } from "@/lib/dictionary";
 
 interface ContactInfoProps {
     wa_no: string;
     email: string;
+    dict: Dictionary["contact"];
 }
 
 export function formatPhoneNumber(phone: string) {
@@ -17,11 +19,11 @@ export function formatPhoneNumber(phone: string) {
   );
 }
 
-export function ContactInfo({ wa_no, email}: ContactInfoProps) {    
+export function ContactInfo({ wa_no, email, dict }: ContactInfoProps) {    
     const contactItems = [
         {
             icon: MapPin,
-            label: "Alamat",
+            label: dict.address,
             value: ALAMAT,
             href: `https://www.google.com/maps?q=${encodeURIComponent(ALAMAT)}`,
         },

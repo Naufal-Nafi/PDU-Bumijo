@@ -16,8 +16,8 @@ export default async function LayananPage({ params }: { params: Promise<{ locale
     return (
         <main className="my-12">
             <Hero title={dict.service.heroTitle} description={dict.service.heroSubtitle}/>
-            <ServiceTabs layananCategories={kategoriList} layananList={layananList}/>
-            <CTA title="Tertarik menggunakan layanan kami?" description="Masih memiliki pertanyaan atau ingin melakukan reservasi?"/>
+            <ServiceTabs dict={dict} locale={locale as Locale} layananCategories={kategoriList} layananList={layananList}/>
+            <CTA locale={locale as Locale} title={dict.service.ctaTitle} description={dict.service.ctaSubtitle}/>
         </main>
     );
 }

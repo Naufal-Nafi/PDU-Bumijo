@@ -2,20 +2,24 @@ import { Hero } from "@/components/hero";
 import { CTA } from "@/components/cta";
 import { ProductGrid } from "./components/product-grid";
 import { produkService } from "@/services/produk.service";
+import { getDictionary } from "@/lib/dictionary";
+import type { Locale } from "@/lib/i18n";
 
-export default async function ProdukPage() {
+export default async function ProdukPage({ params }: { params: Promise<{ locale: string}>}) {
   const produkList = await produkService.getAll();
+  const { locale } = await params;
+  const dict = await getDictionary(locale as Locale);
   return (
     <main className="my-12">
       <Hero
-        title="Produk Daur Ulang PDU Bumijo"
-        description="Berbagai produk hasil pengolahan dan pemanfaatan kembali sampah yang memiliki nilai guna dan nilai ekonomi."
+        title={dict.product.heroTitle}
+        description={dict.product.heroTitle}
       />
-      <ProductGrid produkList={produkList}/>
+      <ProductGrid locale={locale as Locale} produkList={produkList}/>
       <CTA
-        title="Masih ingin mengetahui produk lainnya?"
-        description="Kami juga menerima pemesanan dalam jumlah tertentu
-dan siap memberikan informasi mengenai stok produk."
+        locale={locale as Locale}
+        title={dict.product.ctaTitle}
+        description={dict.product.ctaSubtitle}
       />
     </main>
   );

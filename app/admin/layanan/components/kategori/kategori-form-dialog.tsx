@@ -8,11 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { createKategoriAction, updateKategoriAction } from "@/actions/kategori.action";
+import { KategoriListItem } from "@/services/kategori.service";
 import { toast } from "sonner";
 
 interface Props {
   mode: "create" | "edit";
-  kategori?: { id: number; title: string };
+  kategori?: KategoriListItem;
   trigger?: React.ReactElement;
 }
 
@@ -49,9 +50,14 @@ export function KategoriFormDialog({ mode, kategori, trigger }: Props) {
         <form ref={formRef} action={handleSubmit} className="space-y-4">
           {mode === "edit" && kategori && <input type="hidden" name="id" value={kategori.id} />}
           <div className="space-y-2">
-            <Label htmlFor="title">Title</Label>
+            <Label htmlFor="title">Nama</Label>
             <Input id="title" name="title" defaultValue={kategori?.title} />
             {errors?.title && <p className="text-sm text-destructive">{errors.title[0]}</p>}
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="title_eng">Nama (Bahasa Inggris)</Label>
+            <Input id="title_eng" name="title_eng" defaultValue={kategori?.title_eng ?? ""} />
+            {errors?.title_eng && <p className="text-sm text-destructive">{errors.title_eng[0]}</p>}
           </div>
           <DialogFooter>
             <Button type="submit" disabled={isPending}>

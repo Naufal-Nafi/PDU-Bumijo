@@ -8,6 +8,13 @@
       "when": 1785217496358,
       "tag": "0000_powerful_darkstar",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1785488834340,
+      "tag": "0001_tan_toxin",
+      "breakpoints": true
     }
   ]
 }

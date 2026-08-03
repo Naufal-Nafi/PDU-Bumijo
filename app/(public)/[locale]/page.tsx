@@ -12,8 +12,16 @@ import { FeaturedServices } from "./components/featured-service";
 import { WasteFlowSection } from "./components/waste-flow-section";
 
 import { cn } from "@/lib/utils";
+import { Locale } from "@/lib/i18n";
+import { getDictionary } from "@/lib/dictionary";
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const dict = await getDictionary(locale as Locale);
   return (
     <main className="flex w-full flex-col items-center overflow-hidden font-sans text-dark-primary">
       {/* Hero sementara */}
@@ -25,21 +33,29 @@ export default function Home() {
             </p>
 
             <h1 className="font-fraunces text-4xl leading-tight md:text-6xl lg:text-7xl">
-              Sampah Bukan Akhir, Melainkan Awal dari Nilai Baru
+              {dict.homepage.heroTitle}
             </h1>
 
             <p className="max-w-2xl leading-7 text-dark-primary/75 max-md:text-sm">
-              Bersama masyarakat, kami mengubah sampah menjadi sumber daya yang
-              bermanfaat melalui pengelolaan yang bertanggung jawab dan
-              berkelanjutan.
+              {dict.homepage.heroSubtitle}
             </p>
 
-            <Link
-              href="/kontak"
-              className={cn(buttonVariants({ size: "lg" }), "min-w-52")}
-            >
-              Hubungi Sekarang
-            </Link>
+            <div className="flex gap-4">
+              <Link 
+                href="https://linktr.ee/bsberseri35?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcATX8VJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAaes9IMABYO4PaQyFRsof1mBhIgL01NfiMgjRstWqmErr9p6LvA6KVQ5aL5o-A_aem_XjffCW2ewEoRhmOTLPRUcg"
+                target="_blank"
+                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "min-w-52")}
+              >
+                Linktree
+              </Link>
+
+              <Link
+                href="/kontak"
+                className={cn(buttonVariants({ size: "lg" }), "min-w-52")}
+              >
+                {dict.homepage.ctaButton}
+              </Link>
+            </div>
           </div>
         </FadeIn>
       </section>
@@ -49,8 +65,8 @@ export default function Home() {
         <div className="flex w-4/5 max-w-7xl flex-col gap-12 md:gap-20">
           <FadeIn>
             <p className="max-w-4xl font-fraunces text-2xl leading-snug md:text-4xl">
-              Pusat Daur Ulang Sampah Mandiri{" "}
-              <span className="text-primary">&quot;Papa Dulang Mami&quot;</span>
+              {dict.homepage.aboutUs.title1} <br />
+              <span className="text-primary">{dict.homepage.aboutUs.title2}</span>
             </p>
           </FadeIn>
 
@@ -59,7 +75,7 @@ export default function Home() {
               <div className="relative aspect-4/3 overflow-hidden rounded-3xl border-2 border-dark-primary bg-secondary">
                 <Image
                   src="https://placehold.net/800x600.png"
-                  alt="Tentang PDU Bumijo"
+                  alt={dict.homepage.aboutUs.imageAlt}
                   fill
                   sizes="(max-width: 768px) 80vw, 40vw"
                   className="object-cover"
@@ -70,15 +86,11 @@ export default function Home() {
             <FadeIn delay={0.15}>
               <div className="space-y-6">
                 <p className="leading-8 text-dark-primary/80">
-                  Pusat Daur Ulang Sampah Mandiri &quot;Papa Dulang Mami&quot;
-                  Bumijo merupakan pusat pengelolaan sampah terpadu yang
-                  berlokasi di Kelurahan Bumijo RT 35/RW 08.
+                  {dict.homepage.aboutUs.desc1}
                 </p>
 
                 <p className="leading-8 text-dark-primary/80">
-                  Bersama masyarakat, kami mengelola sampah rumah tangga menjadi
-                  produk yang lebih bermanfaat sehingga mengurangi beban
-                  lingkungan sekaligus memberikan nilai ekonomi.
+                  {dict.homepage.aboutUs.desc2}
                 </p>
 
                 <Link
@@ -88,7 +100,7 @@ export default function Home() {
                     "border-dark-primary",
                   )}
                 >
-                  Kenali Kami Lebih Dekat
+                  {dict.homepage.aboutUs.button}
                 </Link>
               </div>
             </FadeIn>
@@ -96,20 +108,21 @@ export default function Home() {
         </div>
       </section>
 
-      <WasteFlowSection />
+      <WasteFlowSection dict={dict.homepage} />
 
-      <FeaturedServices />
+      <FeaturedServices locale={locale as Locale} dict={dict.homepage} />
 
-      <FeaturedProducts />
+      <FeaturedProducts locale={locale as Locale} dict={dict.homepage} />
 
-      <FeaturedGallery />
+      <FeaturedGallery dict={dict.homepage} />
 
-      <AwardCarousel />
+      <AwardCarousel dict={dict.homepage} />
 
       <div className="w-full mb-12">
         <CTA
-          title="Mari Wujudkan Lingkungan Bumijo yang Lebih Bersih dan Berkelanjutan"
-          description="Berkolaborasi bersama kami dalam mengelola sampah, mengikuti kegiatan edukasi, atau memanfaatkan layanan Pusat Daur Ulang Sampah Mandiri Papa Dulang Mami."
+          locale={locale as Locale}
+          title={dict.homepage.ctaTitle}
+          description={dict.homepage.ctaSubtitle}
         />
       </div>
     </main>

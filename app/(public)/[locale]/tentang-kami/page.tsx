@@ -31,7 +31,7 @@ export default async function TentangKamiPage({
           <iframe
             src="https://www.youtube.com/embed/K98TNkLZ_WA?si=jdaH6Ev3uSVapmd-"
             title="YouTube video player"
-            className="h-full w-full rounded-2xl"
+            className="h-full w-full md:rounded-2xl rounded-lg"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"

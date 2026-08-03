@@ -1,9 +1,11 @@
 import { db } from "@/db";
 import { kontak, type Kontak } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { unstable_noStore as noStore } from 'next/cache';
 
 export const kontakRepository = {
   async findFirst(): Promise<Kontak | undefined> {
+    noStore();
     const [row] = await db.select().from(kontak).limit(1);
     return row;
   },

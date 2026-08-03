@@ -6,6 +6,7 @@ import { createSocialSchema, updateSocialSchema } from "@/validations/social.sch
 import type { ActionResponse } from "@/lib/types";
 import type { Social } from "@/db/schema";
 
+
 export async function createSocialAction(
   _prevState: ActionResponse<Social> | null,
   formData: FormData
@@ -21,6 +22,7 @@ export async function createSocialAction(
   try {
     const data = await socialService.createSocial(parsed.data);
     revalidatePath("/admin/kontak");
+    revalidatePath('/[locale]/kontak', 'page');
     return { success: true, data };
   } catch (err) {
     return { success: false, message: err instanceof Error ? err.message : "Gagal tambah social media" };
@@ -43,6 +45,7 @@ export async function updateSocialAction(
   try {
     const data = await socialService.updateSocial(parsed.data);
     revalidatePath("/admin/kontak");
+    revalidatePath('/[locale]/kontak', 'page');
     return { success: true, data };
   } catch (err) {
     return { success: false, message: err instanceof Error ? err.message : "Gagal update social media" };
@@ -53,6 +56,7 @@ export async function deleteSocialAction(id: number): Promise<ActionResponse<nul
   try {
     await socialService.deleteSocial(id);
     revalidatePath("/admin/kontak");
+    revalidatePath('/[locale]/kontak', 'page');
     return { success: true, data: null };
   } catch (err) {
     return { success: false, message: err instanceof Error ? err.message : "Gagal hapus social media" };

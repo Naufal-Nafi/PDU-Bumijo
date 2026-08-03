@@ -32,7 +32,7 @@ export async function CTA({ title, description, locale }: CTAProps) {
             </a>
           </Button>
           <Button size="lg" variant="outline" className="text-dark-primary">
-            <Link href="/kontak">{dict.cta.contact}</Link>
+            <Link href={`/${locale}/kontak`}>{dict.cta.contact}</Link>
           </Button>
         </FadeIn>
       </div>

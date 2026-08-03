@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import { kontakService } from "@/services/kontak.service";
 import { updateKontakSchema } from "@/validations/kontak.schema";
 import type { ActionResponse } from "@/lib/types";
@@ -25,6 +25,7 @@ export async function updateKontakAction(
   try {
     const data = await kontakService.updateKontak(parsed.data);
     revalidatePath("/admin/kontak");
+    revalidatePath('/[locale]/kontak', 'page');
     return { success: true, data };
   } catch (err) {
     return { success: false, message: err instanceof Error ? err.message : "Gagal update kontak" };

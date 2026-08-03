@@ -1,9 +1,11 @@
 import { db } from "@/db";
 import { social, type Social, type NewSocial } from "@/db/schema";
 import { eq } from "drizzle-orm";
+import { unstable_noStore as noStore } from "next/cache";
 
 export const socialRepository = {
   async findAll(): Promise<Social[]> {
+    noStore();
     return db.select().from(social).orderBy(social.id);
   },
 

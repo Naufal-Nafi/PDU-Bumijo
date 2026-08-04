@@ -25,9 +25,9 @@ export default async function Home({
   return (
     <main className="flex w-full flex-col items-center overflow-hidden font-sans text-dark-primary">
       {/* Hero sementara */}
-      <section className="flex min-h-screen w-full items-center justify-center px-6 text-center">
+      <section className="flex min-h-screen w-full items-center justify-center text-center">
         <FadeIn>
-          <div className="mx-auto flex max-w-4xl flex-col items-center gap-8">
+          <div className="mx-auto flex md:max-w-4xl flex-col items-center gap-8">
             <p className="font-semibold uppercase tracking-[0.25em] text-primary max-md:text-xs">
               Pusat Daur Ulang Bumijo
             </p>
@@ -44,14 +44,14 @@ export default async function Home({
               <Link 
                 href="https://linktr.ee/bsberseri35?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAb21jcATX8VJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA81NjcwNjczNDMzNTI0MjcAAaes9IMABYO4PaQyFRsof1mBhIgL01NfiMgjRstWqmErr9p6LvA6KVQ5aL5o-A_aem_XjffCW2ewEoRhmOTLPRUcg"
                 target="_blank"
-                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "min-w-52")}
+                className={cn(buttonVariants({ size: "lg", variant: "outline" }), "min-w-40")}
               >
                 Linktree
               </Link>
 
               <Link
                 href="/kontak"
-                className={cn(buttonVariants({ size: "lg" }), "min-w-52")}
+                className={cn(buttonVariants({ size: "lg" }), "min-w-40")}
               >
                 {dict.homepage.ctaButton}
               </Link>

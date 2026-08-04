@@ -109,7 +109,7 @@ export default function Navbar({ app_url, dict, locale }: NavbarProps) {
               </li>
             ))}
           </ul>
-          <div className="flex justify-center pb-10">
+          <div className="flex justify-center pb-14">
             <LocaleSwitcher locale={locale}/>
             <Link
               href={app_url}

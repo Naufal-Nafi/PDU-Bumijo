@@ -11,12 +11,14 @@ import { cn } from "@/lib/utils";
 import { GalleryCarousel } from "./gallery-carousel";
 import { SectionHeader } from "./section-header";
 import { Dictionary } from "@/lib/dictionary";
+import { Locale } from "@/lib/i18n";
 
 interface FeaturedGalleryProps {
   dict: Dictionary["homepage"];
+  locale: Locale;
 }
 
-export async function FeaturedGallery({ dict }: FeaturedGalleryProps) {
+export async function FeaturedGallery({ dict, locale }: FeaturedGalleryProps) {
   const galleryList = await galeriService.getAll();
   const featuredGallery = galleryList.slice(0, 6);
 
@@ -41,7 +43,7 @@ export async function FeaturedGallery({ dict }: FeaturedGalleryProps) {
         <FadeIn delay={0.2}>
           <div className="flex justify-center">
             <Link
-              href="/galeri"
+              href={`/${locale}/galeri`}
               className={cn(
                 buttonVariants({ size: "lg" }),
                 "group gap-2",

@@ -50,7 +50,7 @@ export default async function Home({
               </Link>
 
               <Link
-                href="/kontak"
+                href={`/${locale}/kontak`}
                 className={cn(buttonVariants({ size: "lg" }), "min-w-40")}
               >
                 {dict.homepage.ctaButton}
@@ -94,7 +94,7 @@ export default async function Home({
                 </p>
 
                 <Link
-                  href="/tentang-kami"
+                  href={`/${locale}/tentang-kami`}
                   className={cn(
                     buttonVariants({ size: "lg" }),
                     "border-dark-primary",
@@ -114,7 +114,7 @@ export default async function Home({
 
       <FeaturedProducts locale={locale as Locale} dict={dict.homepage} />
 
-      <FeaturedGallery dict={dict.homepage} />
+      <FeaturedGallery locale={locale as Locale} dict={dict.homepage} />
 
       <AwardCarousel dict={dict.homepage} />
 

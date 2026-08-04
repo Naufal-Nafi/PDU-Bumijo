@@ -45,7 +45,7 @@ export async function FeaturedServices({ dict, locale }: FeaturedServiceProps) {
         <FadeIn>
           <div className="flex justify-center">
             <Button size="lg" variant="outline" nativeButton={false} render={
-                <Link href="/layanan">
+                <Link href={`/${locale}/layanan`}>
                 {dict.featuredServices.button}
                 <ArrowRight />
               </Link>

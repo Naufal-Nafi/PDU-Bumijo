@@ -43,7 +43,7 @@ export async function FeaturedProducts({ dict, locale }: FeaturedProductsProps) 
         <FadeIn>
           <div className="flex justify-center">
             <Button size="lg" nativeButton={false} render={
-              <Link href="/produk">
+              <Link href={`/${locale}/produk`}>
                 {dict.featuredProducts.button}
                 <ArrowRight />
               </Link>

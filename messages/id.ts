@@ -79,7 +79,7 @@ export default {
 
         featuredProducts: {
             title: "Produk Kami",
-            subTitle: "Berbagai hasil olahan sampah yang memiliki nilai guna dan nilai ekonomi sebagai wujud ekonomi sirkular di Kelurahan Bumijo.",
+            subTitle: "Berbagai hasil olahan sampah yang memiliki nilai guna dan nilai ekonomi sebagai wujud ekonomi sirkular di Kelurahan Bumijo",
             button: "Lihat Semua Produk",
         },
 
@@ -101,12 +101,12 @@ export default {
 
     gallery: {
         heroTitle: "Galeri",
-        heroSubtitle: "Momen-momen dari kegiatan pengelolaan sampah dan pemberdayaan masyarakat bersama PDU Bumijo."
+        heroSubtitle: "Momen-momen dari kegiatan pengelolaan sampah dan pemberdayaan masyarakat bersama PDU Bumijo"
     },
 
     service: {
         heroTitle: "Layanan PDU Bumijo  ",
-        heroSubtitle: "Kami menyediakan berbagai layanan edukasi dan pengelolaan sampah untuk masyarakat, sekolah, instansi, maupun komunitas.",
+        heroSubtitle: "Kami menyediakan berbagai layanan edukasi dan pengelolaan sampah untuk masyarakat, sekolah, instansi, maupun komunitas",
         ctaTitle: "Tertarik menggunakan layanan kami?",
         ctaSubtitle: "Masih memiliki pertanyaan atau ingin melakukan reservasi?",
         category: "Semua layanan",
@@ -114,9 +114,9 @@ export default {
 
     product: {
         heroTitle: "Produk Daur Ulang PDU Bumijo",
-        heroSubtitle: "Berbagai produk hasil pengolahan dan pemanfaatan kembali sampah yang memiliki nilai guna dan nilai ekonomi.",
+        heroSubtitle: "Berbagai produk hasil pengolahan dan pemanfaatan kembali sampah yang memiliki nilai guna dan nilai ekonomi",
         ctaTitle: "Masih ingin mengetahui produk lainnya?",
-        ctaSubtitle: "Kami juga menerima pemesanan dalam jumlah tertentu dan siap memberikan informasi mengenai stok produk.",
+        ctaSubtitle: "Kami juga menerima pemesanan dalam jumlah tertentu dan siap memberikan informasi mengenai stok produk",
     },
 
     aboutUs: {
@@ -142,7 +142,7 @@ export default {
 
                 2: {
                     title: "Inovasi Bank Sampah Berseri 35",
-                    desc: "Wujud dari kreativitas dan inovasi terpadu dari bank sampah Berseri 35 untuk menyelesaikan masalah sampah di wilayah kelurahan Bumijo",
+                    desc: "Wujud dari kreativitas dan inovasi terpadu dari bank sampah Berseri 35 untuk menyelesaikan masalah sampah di wilayah Kelurahan Bumijo",
                 },
 
                 3: {
@@ -191,7 +191,7 @@ export default {
         visiMisi: {
             visi: {
                 header: "Visi",
-                value: "Mewujudkan Kelurahan Bumijo, khususnya kawasan RT 35/RW 08, menjadi salah satu tempat pengelolaan sampah terpadu yang ramah lingkungan, produktif, dan menjadi pusat edukasi ekonomi sirkular berbasis masyarakat.",
+                value: "Mewujudkan Kelurahan Bumijo, khususnya kawasan RT 35/RW 08, menjadi salah satu tempat pengelolaan sampah terpadu yang ramah lingkungan, produktif, dan menjadi pusat edukasi ekonomi sirkular berbasis masyarakat",
             },
 
             misi: {

@@ -102,12 +102,12 @@ export default {
 
     gallery: {
         heroTitle: "Gallery",
-        heroSubtitle: "Highlights from waste management and community empowerment activities with PDU Bumijo."
+        heroSubtitle: "Highlights from waste management and community empowerment activities with PDU Bumijo"
     },
 
     service: {
         heroTitle: "PDU Bumijo’s Service",
-        heroSubtitle: "We provide varied services from waste management to education programs for everyone, including communities, schools, and agencies.",
+        heroSubtitle: "We provide varied services from waste management to education programs for everyone, including communities, schools, and agencies",
         ctaTitle: "Interested in our service?",
         ctaSubtitle: "Have a question or want to make a reservation?",
         category: "All services",
@@ -129,7 +129,7 @@ export default {
         siapaKami: {
             header: "Who are we?",
             title: 'Pusat Daur Ulang Sampah Mandiri "Papa Dulang Mami"',
-            subTitle: 'Bumijo “Papi Dulang Mami” Community Recycling Center is a sustainable integrated recycling center, located in kelurahan Bumijo RT 35/RW 08, kemantren Jetis, City of Yogyakarta, the Special Region of Yogyakarta. Through the collaboration of surrounding residents and communities, we manage domestic waste into profitable products with economic value to reduce environmental waste.',
+            subTitle: 'Bumijo “Papi Dulang Mami” Community Recycling Center is a sustainable integrated recycling center, located in Kelurahan Bumijo RT 35/RW 08, kemantren Jetis, City of Yogyakarta, the Special Region of Yogyakarta. Through the collaboration of surrounding residents and communities, we manage domestic waste into profitable products with economic value to reduce environmental waste.',
         },
 
         latarBelakang: {
@@ -209,7 +209,7 @@ export default {
 
         penutup: {
             title: "With Our Community, Growing Together",
-            desc: "PDU “Papa Dulang Mami” will always strive to keep growing as an aspiring model for a sustainable community-based waste management. Through collaboration, education, and innovation, we are committed in creating a cleaner environment as well as improving economic stability through waste management",
+            desc: "PDU “Papa Dulang Mami” will always strive to keep growing as an aspiring model for a sustainable community-based waste management. Through collaboration, education, and innovation, we are committed in creating a cleaner environment as well as improving economic stability through waste management.",
         }
     },
 
